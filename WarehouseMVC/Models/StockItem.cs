@@ -1,19 +1,26 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace WarehouseMVC.Models
 {
     public class StockItem
     {
         [Key]
-        public int ArticleNumber { get; set; }
+        public int Id { get; set; }
+
+        public string ArticleNumber { get; set; }
         public string Name { get; set; }
+        public ProductCategory Category { get; set; }
         public decimal Price { get; set; }
         public string ShelfPosition { get; set; }
         public int Quantity { get; set; }
         public string Description { get; set; }
+    }
+
+    public enum ProductCategory
+    {
+        Horses,
+        Clothing,
+        Accessories,
+        Food
     }
 }
